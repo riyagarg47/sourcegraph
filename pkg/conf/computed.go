@@ -44,6 +44,12 @@ func MultipleAuthProvidersEnabledFromConfig(c *schema.SiteConfiguration) bool {
 	return c.ExperimentalFeatures == nil || c.ExperimentalFeatures.MultipleAuthProviders != "disabled"
 }
 
+// ClientAuthorizationFlowEnabled reports whether the clientAuthorizationFlow experiment is enabled.
+func ClientAuthorizationFlowEnabled() bool {
+	p := Get().ExperimentalFeatures.ClientAuthorizationFlow
+	return p != nil && *p // default is disabled
+}
+
 type AccessTokAllow string
 
 const (

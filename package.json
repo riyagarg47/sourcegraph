@@ -57,6 +57,31 @@
       ".ts"
     ]
   },
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "testEnvironment": "node",
+    "preset": "ts-jest/presets/js-with-babel",
+    "globals": {
+      "ts-jest": {
+        "tsConfig": "tsconfig.test.json"
+      }
+    },
+    "testMatch": [
+      "**/*.test.ts?(x)"
+    ],
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/src/repo/index.test.tsx",
+      "/src/util/dom.test.tsx"
+    ],
+    "transformIgnorePatterns": [
+      "xfidufufsd"
+    ]
+  },
   "browserslist": [
     "last 1 version",
     ">1%",
@@ -127,6 +152,7 @@
     "whatwg-url": "^7.0.0"
   },
   "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.1.0",
     "@babel/preset-env": "^7.0.0",
     "@gql2ts/from-schema": "^1.10.1",
     "@sourcegraph/prettierrc": "^2.2.0",
@@ -143,6 +169,8 @@
     "@types/d3-scale": "2.0.2",
     "@types/d3-selection": "1.3.2",
     "@types/d3-shape": "1.2.4",
+    "@types/enzyme": "^3.1.14",
+    "@types/enzyme-adapter-react-16": "^1.0.3",
     "@types/execa": "0.9.0",
     "@types/extract-text-webpack-plugin": "3.0.3",
     "@types/fancy-log": "1.3.0",
@@ -171,18 +199,22 @@
     "@types/webpack": "4.4.11",
     "@types/webpack-serve": "2.0.0",
     "autoprefixer": "^9.0.0",
+    "babel-jest": "^23.6.0",
     "babel-loader": "^8.0.0",
     "babel-plugin-lodash": "^3.3.4",
     "bundlesize": "^0.17.0",
     "cpy": "^7.0.1",
     "cross-env": "^5.2.0",
     "css-loader": "^1.0.0",
+    "enzyme": "^3.7.0",
+    "enzyme-adapter-react-16": "^1.6.0",
     "execa": "^1.0.0",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "globby": "^8.0.1",
     "gulp": "^4.0.0",
     "http-proxy-middleware": "^0.19.0",
     "husky": "^1.1.2",
+    "jest": "^23.6.0",
     "json-schema-to-typescript": "^5.2.2",
     "koa-connect": "^2.0.1",
     "latest-version": "^4.0.0",
@@ -200,6 +232,7 @@
     "stylelint": "^9.4.0",
     "stylelint-formatter-compact": "^1.1.0",
     "thread-loader": "sourcegraph/thread-loader#6321efbc3524f18cd823dd300c1a8a7fe82ca3a5",
+    "ts-jest": "^23.10.4",
     "ts-loader": "^5.0.0",
     "ts-node": "^7.0.1",
     "ts-unused-exports": "^2.0.5",
